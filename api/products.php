@@ -1,7 +1,7 @@
 <?php
 $conn = new mysqli("localhost", "root", "", "crud");
 
-// API endpoint to get the list of products
+// API endpoint to get the list of products.
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $sql = "SELECT * FROM products";
     $result = $conn->query($sql);
@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     echo json_encode($products);
 }
 
-// API endpoint to add a new product
+// API endpoint to add a new product.
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $newProduct = json_decode(file_get_contents("php://input"), true);
     $name = $newProduct['name'];
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->close();
 }
 
-// API endpoint to delete a product
+// API endpoint to delete a product.
 if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
     $productId = $_GET['id'];
     $sql = "DELETE FROM products WHERE id = '$productId'";

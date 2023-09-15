@@ -118,7 +118,7 @@ include('bootstrap.php');
             description: "",
           },
           products: [],
-          currentPage: 1,
+          currentPage: 1,  //current page
           itemsPerPage: 5, // Number of items to display per page
         },
         computed: {
